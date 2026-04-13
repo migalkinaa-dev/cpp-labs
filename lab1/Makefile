@@ -1,7 +1,7 @@
 CXX = g++
 CXXFLAGS = -std=c++17 -Wall -Wextra -Wpedantic -g -fsanitize=address -fno-omit-frame-pointer
 TARGET = main
-SRC = main.cpp
+SRC = main.cpp rect.cpp
 
 all: $(TARGET)
 
