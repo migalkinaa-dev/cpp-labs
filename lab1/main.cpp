@@ -274,7 +274,7 @@ int main()
      */
 
      {
-    Rect r(1, 2, 3, 4);
+    Rect r(1, 2, 4, 3);
     r.inflate(1);      // станет left=0 right=3 top=4 bottom=3
     r.move(10);        // dx=10, dy=0
     r.move(1, -2);     // dx=1, dy=-2
@@ -294,11 +294,11 @@ int main()
      * Какие конструкторы вызываются при выполнении кода в следующем блоке?
      */
 
-    /* {
-        Rect r1(...), r2(...);
+    {
+        Rect r1(1, 2, 3, 4), r2(-10, -5, 100, 50);
         Rect r3 = boundingRect(r1, r2);
         printRect(r3);
-    } */
+    }
 
     /**
      * Задание 1.11. Поля объектов и свойства объектов.
@@ -321,7 +321,20 @@ int main()
      */
 
     {
+    Rect r(1, 5, 10, 2); // left=1 right=5 top=10 bottom=2
 
+    std::cout << "W=" << r.getWidth()
+              << " H=" << r.getHeight()
+              << " S=" << r.getSquare() << "\n";
+
+    r.setWidth(20);
+    r.setHeight(3);
+
+    std::cout << "After setWidth/setHeight:\n";
+    printRect(r);
+    std::cout << "W=" << r.getWidth()
+              << " H=" << r.getHeight()
+              << " S=" << r.getSquare() << "\n";
     }
 
     /**
